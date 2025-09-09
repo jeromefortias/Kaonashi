@@ -1,0 +1,17 @@
+{
+  "AppName": "Nexai.Kaonashi.Gui",
+
+  "ProjectName": "*",
+  "Language": "*",
+  "Category": "GUI",
+  "AppDescription": "A graphical user interface (GUI) application for Nexai Kaonashi, providing users with an intuitive way to interact with the AI features and functionalities of the platform.",
+  "AppDocumentationUrl": "httsp://www.nexai.net",
+  "DataRepository": {
+    "Url": "http://localhost:9200",
+    "Layer": "Default",
+    "Prefix": "",
+    "Password": "",
+    "User": ""
+  }
+
+}

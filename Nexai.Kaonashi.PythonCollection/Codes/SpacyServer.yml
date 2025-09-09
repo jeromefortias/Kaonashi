@@ -1,0 +1,5 @@
+﻿elasticsearch:
+  url: "http://localhost"
+  port: 9200
+  user: ""
+  password: ""

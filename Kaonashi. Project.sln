@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexai.Kaonashi.Core", "Nexai.Kaonashi.Core\Nexai.Kaonashi.Core.csproj", "{F72977A2-A2FD-44B3-8CFF-9F5F53ECCCCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexai.Kaonashi.Admin", "Nexai.Kaonashi.Admin\Nexai.Kaonashi.Admin.csproj", "{ECF2CD21-543E-4A61-9DC6-0FACBA9AF913}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexai.Kaonashi.Gui", "Nexai.Kaonashi.Gui\Nexai.Kaonashi.Gui.csproj", "{463201DD-8F0C-4FF1-9E20-B9C081DC75D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexai.Kaonashi.Server", "Nexai.Kaonashi.Server\Nexai.Kaonashi.Server.csproj", "{9F59E523-D4F5-440C-9623-C918C3C262E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexai.Kaonashi.WebUI", "Nexai.Kaonashi.WebUI\Nexai.Kaonashi.WebUI.csproj", "{8FB09ABC-C3B4-4549-A700-59D1C20BFC19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexai.Kaonashi.PythonCollection", "Nexai.Kaonashi.PythonCollection\Nexai.Kaonashi.PythonCollection.csproj", "{10474C7C-6BAA-4AED-9287-97C9E50F0B27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F72977A2-A2FD-44B3-8CFF-9F5F53ECCCCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72977A2-A2FD-44B3-8CFF-9F5F53ECCCCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72977A2-A2FD-44B3-8CFF-9F5F53ECCCCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72977A2-A2FD-44B3-8CFF-9F5F53ECCCCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF2CD21-543E-4A61-9DC6-0FACBA9AF913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF2CD21-543E-4A61-9DC6-0FACBA9AF913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF2CD21-543E-4A61-9DC6-0FACBA9AF913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF2CD21-543E-4A61-9DC6-0FACBA9AF913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{463201DD-8F0C-4FF1-9E20-B9C081DC75D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463201DD-8F0C-4FF1-9E20-B9C081DC75D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463201DD-8F0C-4FF1-9E20-B9C081DC75D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463201DD-8F0C-4FF1-9E20-B9C081DC75D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F59E523-D4F5-440C-9623-C918C3C262E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F59E523-D4F5-440C-9623-C918C3C262E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F59E523-D4F5-440C-9623-C918C3C262E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F59E523-D4F5-440C-9623-C918C3C262E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB09ABC-C3B4-4549-A700-59D1C20BFC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB09ABC-C3B4-4549-A700-59D1C20BFC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB09ABC-C3B4-4549-A700-59D1C20BFC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB09ABC-C3B4-4549-A700-59D1C20BFC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10474C7C-6BAA-4AED-9287-97C9E50F0B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10474C7C-6BAA-4AED-9287-97C9E50F0B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10474C7C-6BAA-4AED-9287-97C9E50F0B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10474C7C-6BAA-4AED-9287-97C9E50F0B27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {518FC6A5-18ED-4F4F-9644-15A2C21CE703}
+	EndGlobalSection
+EndGlobal

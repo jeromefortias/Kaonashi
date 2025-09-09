@@ -1,0 +1,103 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* Styles for input textbox */
+.input-large {
+    width: 90%;
+    padding: 10px; /* Padding inside the textbox */
+    font-size: 16px; /* Font size for input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    margin-top: 10px; /* Spacing below title */
+}
+
+.input-small {
+    width: 200px;
+    padding: 10px; /* Padding inside the textbox */
+    font-size: 16px; /* Font size for input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    margin-top: 10px; /* Spacing below title */
+}
+
+/* Styles for a nice-looking button */
+button {
+    background-color: #007BFF; /* Blue background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it inline-block */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Margin above button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+    button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+/* Styles for research bar container */
+.research-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 20px auto; /* Center the container */
+    font-family: Arial, sans-serif; /* Set font family */
+}
+
+.research-bar-title {
+    font-size: 20px; /* Title font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 5px; /* Space below title */
+}
+
+.research-bar button {
+    align-self: flex-start; /* Align button to start */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 50%;
+    text-align: left;
+    padding: 8px;
+    border-right: 1px solid #000; /* Vertical line separating columns */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr td:last-child, tr th:last-child {
+    border-right: none; /* Remove border from the last column */
+}
