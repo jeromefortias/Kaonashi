@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace JsonAnalyzzzer
 {
-    internal class DialogPostProcessorVGrain : VGrainBase<IDialogPostProcessorVGrain>, IDialogPostProcessorVGrain
+    public class DialogPostProcessorVGrain : VGrainBase<IDialogPostProcessorVGrain>, IDialogPostProcessorVGrain
     {
         public DialogPostProcessorVGrain(ILogger<IDialogPostProcessorVGrain> logger) : base(logger)
         {

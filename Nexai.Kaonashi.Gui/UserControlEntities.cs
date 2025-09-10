@@ -1,4 +1,7 @@
-﻿using Nexai.Kaonashi.Core.Models.Corpus;
+﻿using Nexai.Kaonashi.Core.Framework;
+using Nexai.Kaonashi.Core.Helpers;
+using Nexai.Kaonashi.Core.Models;
+using Nexai.Kaonashi.Core.Models.Corpus;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,37 +16,43 @@ namespace Nexai.Kaonashi.Gui
 {
     public partial class UserControlEntities : UserControl
     {
+        private SessionManager _session;
+        private Config _config;
+        private List<Entity> _entities = new List<Entity>();
+
         public UserControlEntities()
         {
             InitializeComponent();
-            DataService.PopulateSampleData();
+            Config config = ConfigMgt.GetFromFile<Config>("config.json");
+            _config = config;
+            _session = new SessionManager(_config);
+          
         }
 
         private void UserControlEntities_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(null);
         }
 
-        private void LoadData(string searchTerm = null)
+        private void LoadData(string searchTerm )
         {
-            var entities = DataService.EntitiesSearch(searchTerm);
-            dataGrid.DataSource = entities;
-
-            // Customize the DataGridView's appearance and columns
-            dataGrid.AutoGenerateColumns = true; // Set to false if you want to manually define columns
-            dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGrid.BackgroundColor = SystemColors.ControlLight;
-            dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-
-            // Hide columns that are not relevant for the main view
-            // dataGrid.Columns["LongDescription"].Visible = false;
-            // dataGrid.Columns["AlternativeNames"].Visible = false;
-            // ...and so on for other complex properties.
+          
+            try
+            {
+                _entities = _session.EntitySearchByName(searchTerm);
+                dataGrid.DataSource = _entities;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Error loading entities: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _session.LogSave($"Error loading entities: {ex.Message}", "Kaonashi.Gui", "Error");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var editForm = new EntityEditForm(null);
+            editForm.Show();
         }
 
         private void EntitiesSearchButton_Click(object sender, EventArgs e)
@@ -53,14 +62,13 @@ namespace Nexai.Kaonashi.Gui
 
         private void dataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+         
             {
                 var selectedEntity = dataGrid.Rows[e.RowIndex].DataBoundItem as Entity;
                 if (selectedEntity != null)
                 {
                     var editForm = new EntityEditForm(selectedEntity);
                     editForm.Show();
-                    
                 }
             }
         }

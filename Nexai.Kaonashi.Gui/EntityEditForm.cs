@@ -1,4 +1,7 @@
-﻿using Nexai.Kaonashi.Core.Models.Corpus;
+﻿using Nexai.Kaonashi.Core.Framework;
+using Nexai.Kaonashi.Core.Helpers;
+using Nexai.Kaonashi.Core.Models;
+using Nexai.Kaonashi.Core.Models.Corpus;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +18,18 @@ namespace Nexai.Kaonashi.Gui
     public partial class EntityEditForm : Form
     {
         private Entity _entity;
+        private SessionManager _session;
+        private Config _config;
+
         public EntityEditForm(Entity entity)
         {
-            _entity = entity;
             InitializeComponent();
+            Config config = ConfigMgt.GetFromFile<Config>("config.json");
+            _config = config;
+            _session = new SessionManager(_config);
+            _session.LogSave("Application started", "Kaonashi.Gui", "Info");
+            _entity = entity;
             PopulateFormCOnstrols();
-
         }
 
         private void PopulateFormCOnstrols()
@@ -59,42 +68,65 @@ namespace Nexai.Kaonashi.Gui
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private bool ValidateForm()
         {
-            // Update the entity object with data from the controls
-            _entity.Name = txtBoxEntityName.Text;
-            _entity.AlternativeNames = textBoxOtherNames.Text.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(n => n.Trim()).ToList();
-            _entity.Type = comboBoxEntityType.Text;
-            _entity.ShortDescription = textBoxShortDescription.Text;
-            _entity.LongDescription = textBoxFullDescription.Text;
-            _entity.RelatedEntities = textBoxRelatedEntities.Text.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(n => n.Trim()).ToList();
-            _entity.Joy = trackBarJoy.Value;
-            _entity.Fear = trackBarFear.Value;
-            _entity.Anger = trackBarAnger.Value;
-            _entity.Sadness = trackBarSadness.Value;
-            _entity.Disgust = trackBarDisgust.Value;
-            _entity.DateFrom = dateTimeFrom.Value;
-            _entity.DateTo = dateTimeTo.Value;
-            _entity.HowTo = textBoxHowTo.Text;
-            _entity.WithWhat = textBoxWithWhat.Text;
-            _entity.WithoutWhat = textBoxWithout.Text;
-            _entity.Where = textBoxWhere.Text;
-            _entity.When = textBoxWhen.Text;
-            _entity.Date = DateTime.Now;
+            if (string.IsNullOrWhiteSpace(txtBoxEntityName.Text))
+            {
+                MessageBox.Show("Entity Name is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxShortDescription.Text))
+            {
+                MessageBox.Show("Short description is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(comboBoxEntityType.Text))
+            {
+                MessageBox.Show("Entity type is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            if (ValidateForm() == false)
+            {
+
+            }
+            else
+            { 
+                if(_entity == null) _entity = new Entity();
+                _entity.Name = txtBoxEntityName.Text;
+                _entity.AlternativeNames = textBoxOtherNames.Text.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(n => n.Trim()).ToList();
+                _entity.Type = comboBoxEntityType.Text;
+                _entity.ShortDescription = textBoxShortDescription.Text;
+                _entity.LongDescription = textBoxFullDescription.Text;
+                _entity.RelatedEntities = textBoxRelatedEntities.Text.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(n => n.Trim()).ToList();
+                _entity.Joy = trackBarJoy.Value;
+                _entity.Fear = trackBarFear.Value;
+                _entity.Anger = trackBarAnger.Value;
+                _entity.Sadness = trackBarSadness.Value;
+                _entity.Disgust = trackBarDisgust.Value;
+                _entity.DateFrom = dateTimeFrom.Value;
+                _entity.DateTo = dateTimeTo.Value;
+                _entity.HowTo = textBoxHowTo.Text;
+                _entity.WithWhat = textBoxWithWhat.Text;
+                _entity.WithoutWhat = textBoxWithout.Text;
+                _entity.Where = textBoxWhere.Text;
+                _entity.When = textBoxWhen.Text;
+                _entity.Date = DateTime.Now;
+
+                _session.EntitySave(_entity);
+            }
+                // Update the entity object with data from the controls
             
-     
 
-            DataService.EntityUpdate(_entity);
-    this.DialogResult = DialogResult.OK;
-    this.Close();
-
-
-            // ...and so on
-
-            DataService.EntityUpdate(_entity);
             this.DialogResult = DialogResult.OK;
             this.Close();
+            
         }
     }
 }

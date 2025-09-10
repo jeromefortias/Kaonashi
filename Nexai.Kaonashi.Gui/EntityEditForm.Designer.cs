@@ -101,7 +101,7 @@
             // 
             textBoxOtherNames.Location = new Point(594, 9);
             textBoxOtherNames.Name = "textBoxOtherNames";
-            textBoxOtherNames.Size = new Size(1298, 23);
+            textBoxOtherNames.Size = new Size(893, 23);
             textBoxOtherNames.TabIndex = 3;
             // 
             // label1
@@ -116,7 +116,7 @@
             // comboBoxEntityType
             // 
             comboBoxEntityType.FormattingEnabled = true;
-            comboBoxEntityType.Items.AddRange(new object[] { "PERSON", "LOCATION", "ORGANIZATION", "DATE", "TIME", "COMPANY", "THEORY", "MONEY", "CURRENCY" });
+            comboBoxEntityType.Items.AddRange(new object[] { "PERSON", "LOCATION", "ORGANIZATION", "DATE", "TIME", "COMPANY", "THEORY", "MONEY", "CURRENCY", "APPLICATION", "AGENT", "APP" });
             comboBoxEntityType.Location = new Point(67, 49);
             comboBoxEntityType.Name = "comboBoxEntityType";
             comboBoxEntityType.Size = new Size(394, 23);
@@ -135,7 +135,7 @@
             // 
             textBoxShortDescription.Location = new Point(594, 49);
             textBoxShortDescription.Name = "textBoxShortDescription";
-            textBoxShortDescription.Size = new Size(1298, 23);
+            textBoxShortDescription.Size = new Size(893, 23);
             textBoxShortDescription.TabIndex = 7;
             // 
             // label4
@@ -312,7 +312,7 @@
             textBoxHowTo.Location = new Point(913, 166);
             textBoxHowTo.Multiline = true;
             textBoxHowTo.Name = "textBoxHowTo";
-            textBoxHowTo.Size = new Size(979, 60);
+            textBoxHowTo.Size = new Size(574, 60);
             textBoxHowTo.TabIndex = 114;
             // 
             // textBoxWithWhat
@@ -320,7 +320,7 @@
             textBoxWithWhat.Location = new Point(913, 262);
             textBoxWithWhat.Multiline = true;
             textBoxWithWhat.Name = "textBoxWithWhat";
-            textBoxWithWhat.Size = new Size(979, 60);
+            textBoxWithWhat.Size = new Size(574, 60);
             textBoxWithWhat.TabIndex = 116;
             // 
             // label14
@@ -337,7 +337,7 @@
             textBoxWithout.Location = new Point(913, 356);
             textBoxWithout.Multiline = true;
             textBoxWithout.Name = "textBoxWithout";
-            textBoxWithout.Size = new Size(979, 60);
+            textBoxWithout.Size = new Size(574, 60);
             textBoxWithout.TabIndex = 118;
             // 
             // label15
@@ -354,7 +354,7 @@
             textBoxWhere.Location = new Point(913, 456);
             textBoxWhere.Multiline = true;
             textBoxWhere.Name = "textBoxWhere";
-            textBoxWhere.Size = new Size(979, 60);
+            textBoxWhere.Size = new Size(574, 60);
             textBoxWhere.TabIndex = 120;
             // 
             // label16
@@ -371,7 +371,7 @@
             textBoxWhen.Location = new Point(913, 567);
             textBoxWhen.Multiline = true;
             textBoxWhen.Name = "textBoxWhen";
-            textBoxWhen.Size = new Size(979, 60);
+            textBoxWhen.Size = new Size(574, 60);
             textBoxWhen.TabIndex = 122;
             // 
             // label17
@@ -385,19 +385,19 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1585, 642);
+            button1.Location = new Point(1180, 643);
             button1.Name = "button1";
             button1.Size = new Size(307, 23);
             button1.TabIndex = 123;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += SaveButton_Click;
             // 
             // EntityEditForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1904, 1041);
+            ClientSize = new Size(1503, 678);
             Controls.Add(button1);
             Controls.Add(textBoxWhen);
             Controls.Add(label17);

@@ -12,7 +12,7 @@
             set
             {
                 value = value.ToUpper().Trim();
-                if (!(value == "PERSON" || value == "LOCATION" || value == "ORGANIZATION" || value == "DATE" || value == "TIME" || value == "MONEY" || value == "QUANTITY" || value == "PRODUCT" || value == "EVENT"))
+                if (!(value == "PERSON" || value == "LOCATION" || value == "ORGANIZATION" || value == "DATE" || value == "TIME" || value == "MONEY" || value == "QUANTITY" || value == "PRODUCT" || value == "EVENT" || value =="APPLICATION" || value == "AGENT"))
                 {
                     _Type = "OTHER_ENTITY";
                 }

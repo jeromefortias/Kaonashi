@@ -32,6 +32,7 @@ The main goal of *Kaonashi* is to provide **non-developers**, for free, with a c
 ---
 
 ## License
+MIT License. (have fun)
 Free to use and experiment with. Contributions, feedback, and creativity are welcome!  
 
 ## Contact

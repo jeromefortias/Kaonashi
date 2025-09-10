@@ -103,9 +103,32 @@
             return ret;
         }
 
+        public List<Entity> EntitySearchByName(string name)
+        {
+            List<Entity> ret = new List<Entity>();
+            try
+            {
+                ret =  ESSServer.SearchTextInDocuments<Entity>(name).ToList<Entity>();
+            }
+                        catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+             throw ex;
+            }
+
+
+
+            return ret;
+        }
+
         public ServiceReturn EntitySave(Entity entity)
         {
             ServiceReturn ret = new ServiceReturn();
+            if(entity.AlternativeNames != null)
+            {
+                entity.AlternativeNames.Add(entity.Name);
+                entity.AlternativeNames = DedupCollection<string>(entity.AlternativeNames).ToList<string>();
+            }
             string returnedId = "";
             try
             {
@@ -247,6 +270,9 @@
             }
             return ret;
         }
+
+
+
 
         public ServiceReturn LogSave(Log log)
         {
