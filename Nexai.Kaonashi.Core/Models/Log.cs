@@ -7,15 +7,11 @@
         {
             Init();
         }
-       
         public Log(string? id) : base(id)
         {
             Init();
         }
         public string AppName { get; set; }
-        
-
-
         public string Type
         {
             get { return _Type; }
@@ -35,6 +31,7 @@
 
         private void Init()
         {
+                ///////
         }
        
     }
